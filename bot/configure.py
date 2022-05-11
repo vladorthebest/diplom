@@ -1,8 +1,8 @@
 import telebot
-
+from TOKEN import TOKEN
 config = {
 	'name' : 'stppbot',
-	'token' : '622233587:AAG6fg0yuZ7Zr4kj1E7yCEJcqxIogI1L_sk'
+	'token' : TOKEN
 }
 # MAIN Kayboard
 main_kayboard = telebot.types.ReplyKeyboardMarkup(True, False)
