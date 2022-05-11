@@ -1,0 +1,33 @@
+{% extends 'mainapp/main.html' %}
+{% block text %} 
+    
+        <div class="group">
+            <div class="main_tab">
+                <table border="1" id="main-tab">
+                    <thead>
+                        <tr>
+                            <th>Група</th>
+                            <th>№/пари</th>
+                            <th>Дисципліна</th>
+                            <th>Викладач</th>
+                            <th>Аудиторія</th>
+                            <th>День тижня</th>
+                            <th>-</th>
+                        </tr> 
+                    </thead> 
+                {% for el in lessons %}               
+                    <tr>
+                        <td>{{el.group}}</td>
+                        <td>{{el.number}}</td>
+                        <td>{{el.lesson}}</td>
+                        <td>{{el.teacher}}</td>
+                        <td>{{el.classroom}}</td>
+                        <td>{{el.day}}</td>
+                        <td><button><a href='{% url "lesson_detail" el.id %}'>READ MORE</a></button></td>
+                    </tr>
+                    <span>{{data.error}}</span>
+                {% endfor %}   
+                </table>
+            </div>
+        </div>    
+{% endblock %}

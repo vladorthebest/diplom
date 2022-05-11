@@ -1,0 +1,23 @@
+{% extends 'mainapp/main.html' %}
+
+{% block text %}   
+    <div class="wrapper">
+        <div class="room">
+           <div class='container'>
+              <div class="room__body">
+                 <h1>{{lesson.group}}</h1>
+                 <p>{{lesson.lesson}}</p>
+                 <p>{{lesson.teacher}}</p>
+                 <div class="room_form">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.classroom }}<br>
+                        <button type="submit">Add</button>
+                    </form>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+    
+{% endblock %}

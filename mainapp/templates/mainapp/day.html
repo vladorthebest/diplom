@@ -1,0 +1,12 @@
+{% extends 'mainapp/main.html' %}
+
+{% block text %}
+    {% for category in categories %}
+    <h1> {{category}} </h1>
+
+    {% for product in category.lesson_set.all %}
+        <p> {{product.lesson}} </p>
+    {% endfor %}
+
+    {% endfor %}
+{% endblock %}

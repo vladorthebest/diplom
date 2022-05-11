@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+        <title>Розподіл кабінетів</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class='container'>
+               <div class="header__body">
+                  <div class="header__img"><a href="../"><img src="{% static 'mainapp/img/header.png' %}" alt=""></a></div>
+                  <ul>
+                     <a href="../day"><li>Розклад</li></a>
+                     <a href="../etalon"><li>Розклад на семестр</li></a>
+                     <a href="../create"><li>Заповнити розклад аудиторіями</li></a>
+                  </ul>
+               </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            {% block text %}
+            {% endblock %}
+        </div>
+        <footer class="footer">
+
+        </footer>
+        <script src="{% static 'mainapp/js/tablesort.js' %}"></script>
+        <!-- Include sort types you need -->
+        <script src="{% static 'mainapp/js/tablesort.number.js' %}"></script>
+        <script src="{% static 'mainapp/js/tablesort.date.js' %}"></script>
+        <script>
+           new Tablesort(document.getElementById('main-tab'));
+        </script>
+    </body>
+
+</html>
+
+    
